@@ -1,0 +1,29 @@
+{
+  "name": "mac.exe",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "devStart": "nodemon bot.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/conor52/mac.exe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/conor52/mac.exe/issues"
+  },
+  "homepage": "https://github.com/conor52/mac.exe#readme",
+  "dependencies": {
+    "discord.js": "^12.5.1",
+    "dotenv": "^8.2.0",
+    "install": "^0.13.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.6"
+  }
+}
