@@ -11,8 +11,21 @@ client.on('ready', () => {
 client.on('message', msg => {
   if (msg.member.id === "276804557055721483") {
     msg.react("👎")
-    
   }
+
+  if (msg.member.id === "140845637636718595") {
+    msg.react("👍")
+  }
+
+  if (msg.content === 'is edd a rat') {
+    msg.channel.send('I see absolutely no difference between edd and Stuart Little');
+  }
+
+  if (msg.content === 'is bray a shithole') {
+    msg.channel.send('yes, bray is shit.');
+  }
+
+  
 });
 
 
