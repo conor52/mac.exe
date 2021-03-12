@@ -16,6 +16,10 @@ client.on('message', msg => {
   if (msg.member.id === "140845637636718595") {
     msg.react("👍")
   }
+  
+  if (msg.member.id === "784592080051765278") {
+    msg.react(":poop:")
+  }
 
   if (msg.content === 'is edd a rat') {
     msg.channel.send('I see absolutely no difference between edd and Stuart Little');
