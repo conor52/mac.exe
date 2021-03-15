@@ -13,15 +13,16 @@ client.on('message', msg => {
     msg.react("👎")
   }
 
+  if (msg.member.id === "140845637636718595") {
+    msg.react("👍")
+  }
+
 
   if (msg.member.id === "140833262065942528") {
     msg.react("<:niall2:413768442005553152>")
   }
 
-  if (msg.member.id === "140845637636718595") {
-    msg.react(":killian-1:")
-  }
-
+  
   if (msg.member.id === "378702852786356224") {
     msg.react("🐀")
   }
