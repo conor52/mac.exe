@@ -14,14 +14,23 @@ client.on('message', msg => {
   }
 
 
-  if (msg.member.id === "140845637636718595") {
+  if (msg.member.id === "140833262065942528") {
     msg.react("<:niall2:413768442005553152>")
+  }
+
+  if (msg.member.id === "140845637636718595") {
+    msg.react(":killian-1:")
   }
 
   if (msg.member.id === "378702852786356224") {
     msg.react("🐀")
   }
   
+  
+  if (msg.member.id === "184793319014924289") {
+    msg.react("<:dion2:413724324671782925>")
+  }
+
   if (msg.member.id === "140833262065942528") {
     msg.react("<:niall2:413768442005553152>")
   }
