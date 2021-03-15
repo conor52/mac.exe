@@ -13,12 +13,13 @@ client.on('message', msg => {
     msg.react("👎")
   }
 
+ 
   if (msg.member.id === "140845637636718595") {
-    msg.react("👍")
+    msg.react("🐀")
   }
   
-  if (msg.member.id === "784592080051765278") {
-    msg.react(":niall2:")
+  if (msg.member.id === "140833262065942528") {
+    msg.react("<:niall2:413768442005553152>")
   }
 
   if (msg.content === 'is edd a rat') {
