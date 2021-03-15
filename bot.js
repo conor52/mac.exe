@@ -13,9 +13,8 @@ client.on('message', msg => {
     msg.react("👎")
   }
 
- 
   if (msg.member.id === "140845637636718595") {
-    msg.react(":rat:")
+    msg.react("👍")
   }
   
   if (msg.member.id === "784592080051765278") {
