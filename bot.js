@@ -14,6 +14,10 @@ client.on('message', msg => {
   }
 
 
+  if (msg.member.id === "140845637636718595") {
+    msg.react("<:niall2:413768442005553152>")
+  }
+
   if (msg.member.id === "378702852786356224") {
     msg.react("🐀")
   }
