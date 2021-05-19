@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const Discord = require('discord.js');
+const discordTTS=require("discord-tts");
 const client = new Discord.Client();
 
 client.on('ready', () => {
