@@ -48,7 +48,9 @@ client.on('message', msg => {
     var channelId = msg.member.voice.channelID;
     var channel = client.channels.cache.get(channelId);
     channel.join().then(connection => {
-      connection.play(fs.createReadStream('audio.webm'), { type: 'webm/opus' });
+      connection.play(
+        'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
+      );
     });
   }
 });
