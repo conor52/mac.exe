@@ -2,8 +2,8 @@ require('dotenv').config();
 
 const discord = require('discord.js');
 const client = new discord.Client();
+const discordTTS = require('discord-tts');
 const path = require('path');
-const fs = require('fs');
 
 client.on('ready', () => {
   console.log(`Logged in in ${client.user.tag}!`);
