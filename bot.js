@@ -2,7 +2,6 @@ require('dotenv').config();
 
 const discord = require('discord.js');
 const say = require('say');
-say.speak('hello world');
 const client = new discord.Client();
 
 client.on('ready', () => {
