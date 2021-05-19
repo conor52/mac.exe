@@ -1,52 +1,28 @@
-require('dotenv').config();
+const say = require('say');
 
-const Discord = require('discord.js');
-const client = new Discord.Client();
-
-client.on('ready', () => {
-  console.log(`Logged in in ${client.user.tag}!`);
-});
-
-client.on('message', msg => {
-  if (msg.member.id === '276804557055721483') {
-    msg.react('👎');
-  }
-
-  if (msg.member.id === '140845637636718595') {
-    msg.react('👍');
-  }
-
-  if (msg.member.id === '140833262065942528') {
-    msg.react('<:niall2:413768442005553152>');
-  }
-
-  if (msg.member.id === '378702852786356224') {
-    msg.react('🐀');
-  }
-
-  if (msg.member.id === '184793319014924289') {
-    msg.react('<:dion2:413724324671782925>');
-  }
-
-  if (msg.member.id === '140833262065942528') {
-    msg.react('<:niall2:413768442005553152>');
-  }
-
-  if (msg.content === 'is edd a rat') {
-    msg.channel.send(
-      'I see absolutely no difference between edd and Stuart Little'
-    );
-  }
-
-  if (msg.content === 'is bray a shithole') {
-    msg.channel.send('yes, bray is shit.');
-  }
-
-  if (msg.content === '.') {
-    message.channel.send('A text to speech message from a bot.', {
-      tts: true,
+function tts(voiceChannel, text) {
+    if (!FS.existsSync('./temp')){
+        FS.mkdirSync('./temp');
+    }
+    const timestamp = new Date().getTime();
+    const soundPath = `./temp/${timestamp}.wav`;
+    say.export(text, null, 1, soundPath, (err) => {
+        if (err) {
+            console.error(err);
+            return;
+        }else{
+            voiceChannel.join().then((connection) => {
+                connection.playFile(soundPath).on('end', () => {
+                    connection.disconnect();
+                    FS.unlinkSync(soundPath);
+                }).on('error', (err) => {
+                    console.error(err);
+                    connection.disconnect();
+                    FS.unlinkSync(soundPath);
+                });
+            }).catch((err) => {
+                console.error(err);
+            });
+        }
     });
-  }
-});
-
-client.login(process.env.BOT_TOKEN);
+}
