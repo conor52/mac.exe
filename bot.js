@@ -43,7 +43,7 @@ client.on('message', msg => {
   }
 
   if (msg.content === 'test') {
-    message.channel.send('A text to speech message from a bot.', {
+    message.channel.send("Meow! I'm a baby loli kitten!", {
       tts: true,
     });
   }
