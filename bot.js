@@ -25,6 +25,9 @@ client.on('message', msg => {
   if (msg.member.id === '378702852786356224') {
     msg.react('🐀');
   }
+  if (msg.member.id === '378752852786356224') {
+    msg.react('🐀');
+  }
 
   if (msg.member.id === '184793319014924289') {
     msg.react('<:dion2:413724324671782925>');
