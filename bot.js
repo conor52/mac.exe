@@ -42,7 +42,7 @@ client.on('message', msg => {
     msg.channel.send('yes, bray is shit.');
   }
 
-  if (msg.content === 'test') {
+  if (msg.content === '.') {
     message.channel.send("Meow! I'm a baby loli kitten!", {
       tts: true,
     });
