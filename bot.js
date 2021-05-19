@@ -3,6 +3,7 @@ require('dotenv').config();
 const discord = require('discord.js');
 const client = new discord.Client();
 const path = require('path');
+const fs = require('fs');
 
 client.on('ready', () => {
   console.log(`Logged in in ${client.user.tag}!`);
@@ -47,7 +48,7 @@ client.on('message', msg => {
     var channelId = msg.member.voice.channelID;
     var channel = client.channels.cache.get(channelId);
     channel.join().then(connection => {
-      const dispatcher = connection.play(fs.createReadStream('hal.ogg'), {
+      connection.play(fs.createReadStream('hal.ogg'), {
         type: 'ogg/opus',
       });
     });
