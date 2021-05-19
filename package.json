@@ -23,7 +23,8 @@
     "discord.js": "^12.5.1",
     "dotenv": "^8.2.0",
     "install": "^0.13.0",
-    "say": "^0.16.0"
+    "say": "^0.16.0",
+    "speak-tts": "^2.0.8"
   },
   "devDependencies": {
     "nodemon": "^2.0.6"
