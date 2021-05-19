@@ -47,7 +47,7 @@ client.on('message', msg => {
     var channelId = msg.member.voice.channelID;
     var channel = client.channels.cache.get(channelId);
     channel.join().then(connection => {
-      const dispatcher = connection.play(path.join__dirname, 'hal.wav');
+      const dispatcher = connection.play(path.join(__dirname, 'hal.m4a'));
     });
   }
 });
