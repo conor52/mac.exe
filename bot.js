@@ -25,9 +25,6 @@ client.on('message', msg => {
   if (msg.member.id === '378702852786356224') {
     msg.react('🐀');
   }
-  if (msg.member.id === '378752852786356224') {
-    msg.react('🐀');
-  }
 
   if (msg.member.id === '184793319014924289') {
     msg.react('<:dion2:413724324671782925>');
@@ -51,9 +48,7 @@ client.on('message', msg => {
     var channelId = msg.member.voice.channelID;
     var channel = client.channels.cache.get(channelId);
     channel.join().then(connection => {
-      connection.play(fs.createReadStream('hal.ogg'), {
-        type: 'ogg/opus',
-      });
+      connection.play(fs.createReadStream('audio.webm'), { type: 'webm/opus' });
     });
   }
 });
