@@ -45,12 +45,12 @@ client.on('message', msg => {
   }
 
   if (msg.content === '.') {
+    const broadcast = client.voice.createBroadcast();
     var channelId = msg.member.voice.channelID;
     var channel = client.channels.cache.get(channelId);
     channel.join().then(connection => {
-      const dispatcher = connection.play(
-        'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
-      );
+      broadcast.play(discordTTS.getVoiceStream('test 123'));
+      const dispatcher = connection.play(broadcast);
     });
   }
 });
