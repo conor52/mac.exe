@@ -42,9 +42,13 @@ client.on('message', msg => {
     msg.channel.send('yes, bray is shit.');
   }
 
-  if (msg.content === '.') {
-    msg.channel.send('A text to speech message from a bot.', {
-      tts: true,
+  if(msg.content==="."){
+    const broadcast = client.voice.createBroadcast();
+    var channelId=msg.member.voice.channelID;
+    var channel=client.channels.cache.get(channelId);
+    channel.join().then(connection => {
+        broadcast.play(discordTTS.getVoiceStream("test 123"));
+        const dispatcher=connection.play(broadcast);
     });
   }
 });
