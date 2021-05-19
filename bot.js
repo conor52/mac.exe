@@ -1,8 +1,8 @@
 require('dotenv').config();
 
 const discord = require('discord.js');
-const say = require('say');
 const client = new discord.Client();
+const path = require('path');
 
 client.on('ready', () => {
   console.log(`Logged in in ${client.user.tag}!`);
@@ -44,12 +44,10 @@ client.on('message', msg => {
   }
 
   if (msg.content === '.') {
-    const broadcast = client.voice.createBroadcast();
     var channelId = msg.member.voice.channelID;
     var channel = client.channels.cache.get(channelId);
     channel.join().then(connection => {
-      say.speak('hello world');
-      const dispatcher = connection.play(broadcast);
+      const dispatcher = connection.play(path.join__dirname, 'hal.wav');
     });
   }
 });
