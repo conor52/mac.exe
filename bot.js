@@ -44,15 +44,13 @@ client.on('message', msg => {
     msg.channel.send('yes, bray is shit.');
   }
 
-  if (msg.content === '.') {
-    var channelId = msg.member.voice.channelID;
-    var channel = client.channels.cache.get(channelId);
-    channel.join().then(connection => {
-      connection.play(
-        'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
-      );
-    });
-  }
+  if (message.member.voice.channel) {
+		const connection = await message.member.voice.channel.join();
+
+    connection.play(
+      'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3'
+    );
+	}
 });
 
 client.login(process.env.BOT_TOKEN);
