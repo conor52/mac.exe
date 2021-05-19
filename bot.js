@@ -39,9 +39,9 @@ client.on('message', msg => {
   }
 
   if (msg.content === 'test') {
-    message.channel.send("Hello Virgins", {
-      tts: true
-     })
+    message.channel.send('Hello Virgins', {
+      tts: true,
+    });
   }
 
   if (msg.content === 'is bray a shithole') {
