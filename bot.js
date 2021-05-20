@@ -13,11 +13,13 @@ client.on('message', msg => {
     msg.react('👎');
   }
 
-  // Join the same voice channel of the author of the message
-  if (msg.content === '.') {
-    const connection = await msg.member.voice.channel.join();
-    connection.play(fs.createReadStream('hal.ogg'), { type: 'ogg/opus' });
-  }
+  client.on('message', async message => {
+    // Join the same voice channel of the author of the message
+    if (message.member.voice.channel) {
+      const connection = await message.member.voice.channel.join();
+      connection.play(fs.createReadStream('hal.ogg'), { type: 'ogg/opus' });
+    }
+  });
 
   if (msg.member.id === '140845637636718595') {
     msg.react('👍');
