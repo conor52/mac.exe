@@ -10,7 +10,7 @@ client.on('message', async message => {
     const connection = await message.member.voice.channel.join();
 
     // Create a dispatcher
-    const dispatcher = connection.play(fs.createReadStream('Example.ogg'), {
+    const dispatcher = connection.play(fs.createReadStream('C:\Users\conor_mf0f\Dropbox\Vs code projects\mac.exe\Example.ogg'), {
       type: 'ogg/opus',
     });
 
