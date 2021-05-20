@@ -4,6 +4,14 @@ const discord = require('discord.js');
 const client = new discord.Client();
 const fs = require('fs');
 
+client.on('message', async message => {
+  // Join the same voice channel of the author of the message
+  if (message.member.voice.channel) {
+    const connection = await message.member.voice.channel.join();
+    connection.play(fs.createReadStream('hal.ogg'), { type: 'ogg/opus' });
+  }
+});
+
 client.on('ready', () => {
   console.log(`Logged in in ${client.user.tag}!`);
 });
@@ -12,14 +20,6 @@ client.on('message', msg => {
   if (msg.member.id === '276804557055721483') {
     msg.react('👎');
   }
-
-  client.on('message', async message => {
-    // Join the same voice channel of the author of the message
-    if (message.member.voice.channel) {
-      const connection = await message.member.voice.channel.join();
-      connection.play(fs.createReadStream('hal.ogg'), { type: 'ogg/opus' });
-    }
-  });
 
   if (msg.member.id === '140845637636718595') {
     msg.react('👍');
