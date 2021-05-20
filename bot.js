@@ -5,19 +5,14 @@ const client = new discord.Client();
 const fs = require('fs');
 const path = require('path');
 
-async run(message) {
-  const { voice } = message.member
-
-  if (!voice.channelID) {
-    message.reply('You must be in a voice channel')
-    return
+client.on('message', async message => {
+  // Join the same voice channel of the author of the message
+  if (message.member.voice.channel) {
+    voice.channel.join().then(connection => {
+      connection.play(path.join(__dirname, 'hal.webm'));
+    });
   }
-
-  voice.channel.join().then((connection) => {
-    connection.play(path.join(__dirname, 'hal.webm'))
-  })
-}
-
+});
 // client.on('ready', () => {
 //   console.log(`Logged in in ${client.user.tag}!`);
 // });
