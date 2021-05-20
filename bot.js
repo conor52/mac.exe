@@ -43,7 +43,7 @@ client.on('message', msg => {
     msg.channel.send('yes, bray is shit.');
   }
 
-  if (msg.content === '.') {
+  if (msg.content === 'test') {
     const broadcast = client.voice.createBroadcast();
     var channelId = msg.member.voice.channelID;
     var channel = client.channels.cache.get(channelId);
