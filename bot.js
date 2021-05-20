@@ -7,14 +7,15 @@ const fs = require('fs');
 client.on('message', async message => {
   // Join the same voice channel of the author of the message
   if (message.member.voice.channel) {
-    message.member.voice.channel.join(
-      then(connection => {
+    message.member.voice.channel
+      .join()
+      .then(connection => {
         const dispatcher = connection.playFile('Example.mp3');
         dispatcher.on('end', end => {
           voiceChannel.leave();
         });
-      }).catch(err => console.log(err))
-    );
+      })
+      .catch(err => console.log(err));
   }
 });
 
