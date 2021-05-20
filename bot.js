@@ -10,15 +10,6 @@ client.on('ready', () => {
 });
 
 client.on('message', msg => {
-  if (msg.content === 'test') {
-    if (message.member.voice.channel) {
-      const connection = await message.member.voice.channel.join();
-      voice.channel.join().then(connection => {
-        connection.play(fs.createReadStream('hal.webm'), { type: 'webm/opus' });
-      });
-    }
-  }
-
   if (msg.member.id === '276804557055721483') {
     msg.react('👎');
   }
