@@ -10,7 +10,9 @@ client.on('message', async message => {
     message.member.voice.channel
       .join()
       .then(connection => {
-        const dispatcher = connection.playFile('Example.mp3');
+        const dispatcher = connection.playFile(
+          'C:/Users/conor_mf0f/Dropbox/Vs code projects/mac.exe/Example.mp3'
+        );
         dispatcher.on('end', end => {
           voiceChannel.leave();
         });
