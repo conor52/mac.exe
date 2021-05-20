@@ -10,7 +10,7 @@ client.on('message', async message => {
     const connection = await message.member.voice.channel.join();
 
     // Create a dispatcher
-    const dispatcher = connection.play('./Example.mp3');
+    const dispatcher = connection.play('C:/Users/conor_mf0f/Dropbox/Vs code projects/mac.exe/Example.mp3');
 
     dispatcher.on('start', () => {
       console.log('audio.mp3 is now playing!');
