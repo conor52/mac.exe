@@ -52,16 +52,6 @@ client.on('message', msg => {
   if (msg.content === 'is bray a shithole') {
     msg.channel.send('yes, bray is shit.');
   }
-
-  if (msg.content === 'test') {
-    const broadcast = client.voice.createBroadcast();
-    var channelId = msg.member.voice.channelID;
-    var channel = client.channels.cache.get(channelId);
-    channel.join().then(connection => {
-      broadcast.play(discordTTS.getVoiceStream('test 123'));
-      connection.play(fs.createReadStream('hal.webm'), { type: 'webm/opus' });
-    });
-  }
 });
 
 client.login(process.env.BOT_TOKEN);
