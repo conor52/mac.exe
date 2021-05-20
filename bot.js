@@ -4,11 +4,13 @@ const discord = require('discord.js');
 const client = new discord.Client();
 const fs = require('fs');
 
-
-async function play(voiceChannel) {
-	const connection = await voiceChannel.join();
-	connection.play(fs.createReadStream('hal.webm'), { type: 'webm/opus' });
-}
+client.on('message', async message => {
+  // Join the same voice channel of the author of the message
+  if (message.member.voice.channel) {
+    const connection = await message.member.voice.channel.join();
+    connection.play(fs.createReadStream('hal.webm'), { type: 'webm/opus' });
+  }
+});
 // client.on('ready', () => {
 //   console.log(`Logged in in ${client.user.tag}!`);
 // });
