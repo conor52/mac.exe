@@ -24,6 +24,7 @@
     "dotenv": "^8.2.0",
     "fs": "0.0.1-security",
     "install": "^0.13.0",
+    "opusscript": "0.0.8",
     "say": "^0.16.0",
     "speak-tts": "^2.0.8"
   },
