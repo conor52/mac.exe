@@ -8,7 +8,11 @@ client.on('message', async message => {
   // Join the same voice channel of the author of the message
   if (message.member.voice.channel) {
     const connection = await message.member.voice.channel.join();
-    connection.play(fs.createReadStream('hal.webm'), { type: 'webm/opus' });
+    const dispatcher = connection.play('hal.webm');
+
+    dispatcher.on('start', () => {
+      console.log('audio.mp3 is now playing!');
+    });
   }
 });
 // client.on('ready', () => {
