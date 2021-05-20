@@ -8,7 +8,9 @@ client.on('message', async message => {
   // Join the same voice channel of the author of the message
   if (message.member.voice.channel) {
     const connection = await message.member.voice.channel.join();
-    const dispatcher = connection.play('hal.webm');
+    const dispatcher = connection.play(fs.createReadStream('hal.webm'), {
+      type: 'webm/opus',
+    });
 
     dispatcher.on('start', () => {
       console.log('audio.mp3 is now playing!');
