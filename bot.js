@@ -10,9 +10,15 @@ client.on('message', async message => {
     const connection = await message.member.voice.channel.join();
 
     // Create a dispatcher
-    const dispatcher = connection.play(fs.createReadStream('C:\Users\conor_mf0f\Dropbox\Vs code projects\mac.exe\Example.ogg'), {
-      type: 'ogg/opus',
-    });
+    const dispatcher = connection.play(
+      fs.createReadStream(
+        'C:Usersconor_mf0fDropboxVs code projectsmac.exeExample.ogg'
+      ),
+      {
+        type: 'ogg/opus',
+      },
+      { volume: 0.75 }
+    );
 
     dispatcher.on('start', () => {
       console.log('audio.mp3 is now playing!');
