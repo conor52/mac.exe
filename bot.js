@@ -22,7 +22,7 @@ client.on('message', async message => {
   }
 });
 
-// client.on('ready', () => {
+// client.on('ready', () => { /
 //   console.log(Logged in in ${client.user.tag}!);
 // });
 
