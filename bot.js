@@ -50,7 +50,8 @@ client.on('message', msg => {
     var channel = client.channels.cache.get(channelId);
     channel.join().then(connection => {
       broadcast.play(discordTTS.getVoiceStream('test 123'));
-      const dispatcher = connection.play(broadcast);
+      connection.play(fs.createReadStream('hal.webm'), { type: 'webm/opus' });
+
     });
   }
 });
