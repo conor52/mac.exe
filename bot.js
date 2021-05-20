@@ -8,7 +8,7 @@ client.on('message', async message => {
   // Join the same voice channel of the author of the message
   if (message.member.voice.channel) {
     const connection = await message.member.voice.channel.join();
-    connection.play(fs.createReadStream('Example.ogg'), { type: 'ogg/opus' });
+    connection.play(fs.createReadStream('C:\Users\conor_mf0f\Dropbox\Vs code projects\mac.exe\Example.ogg'), { type: 'ogg/opus' });
   }
 });
 
