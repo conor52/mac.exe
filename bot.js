@@ -3,6 +3,7 @@ require('dotenv').config();
 const discord = require('discord.js');
 const client = new discord.Client();
 const fs = require('fs');
+const ffmpeg = require("ffmpeg-extra")
 
 client.on('message', async message => {
   // Join the same voice channel of the author of the message
