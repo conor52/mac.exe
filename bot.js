@@ -8,7 +8,12 @@ client.on('message', async message => {
   // Join the same voice channel of the author of the message
   if (message.member.voice.channel) {
     const connection = await message.member.voice.channel.join();
-    connection.play(fs.createReadStream('Example.ogg'), { type: 'ogg/opus' });
+    connection.play(
+      fs.createReadStream(
+        'https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg'
+      ),
+      { type: 'ogg/opus' }
+    );
   }
 });
 
