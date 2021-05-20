@@ -7,51 +7,44 @@ const fs = require('fs');
 client.on('message', async message => {
   // Join the same voice channel of the author of the message
   if (message.member.voice.channel) {
-    const connection = await message.member.voice.channel.join();
-
-    // Create a dispatcher
-    const dispatcher = connection.play('C:/Users/conor_mf0f/Dropbox/Vs code projects/mac.exe/Example.mp3');
-
-    dispatcher.on('start', () => {
-      console.log('audio.mp3 is now playing!');
-    });
-
-    dispatcher.on('finish', () => {
-      console.log('audio.mp3 has finished playing!');
-    });
-
-    // Always remember to handle errors appropriately!
-    dispatcher.on('error', console.error);
+    message.member.voice.channel.join(
+      then(connection => {
+        const dispatcher = connection.playFile('Example.mp3');
+        dispatcher.on('end', end => {
+          voiceChannel.leave();
+        });
+      }).catch(err => console.log(err))
+    );
   }
 });
 
 // client.on('ready', () => {
-//   console.log(`Logged in in ${client.user.tag}!`);
+//   console.log(Logged in in ${client.user.tag}!);
 // });
 
 // client.on('message', msg => {
 //   if (msg.member.id === '276804557055721483') {
-//     msg.react('👎');
+//     msg.react('');
 //   }
 
 //   if (msg.member.id === '140845637636718595') {
-//     msg.react('👍');
+//     msg.react('');
 //   }
 
 //   if (msg.member.id === '140833262065942528') {
-//     msg.react('<:niall2:413768442005553152>');
+//     msg.react(':niall2:');
 //   }
 
 //   if (msg.member.id === '378702852786356224') {
-//     msg.react('🐀');
+//     msg.react('');
 //   }
 
 //   if (msg.member.id === '184793319014924289') {
-//     msg.react('<:dion2:413724324671782925>');
+//     msg.react(':dion2:');
 //   }
 
 //   if (msg.member.id === '140833262065942528') {
-//     msg.react('<:niall2:413768442005553152>');
+//     msg.react(':niall2:');
 //   }
 
 //   if (msg.content === 'is edd a rat') {
